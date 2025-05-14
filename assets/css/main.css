@@ -1,0 +1,163 @@
+@import 'tailwindcss';
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    font-family: var(--font-primary);
+    color: var(--color-black);
+  }
+
+  .container {
+    max-width: 1640px;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h1,
+  .h1,
+  .heading-hero {
+    font-size: 40vh;
+    font-weight: 900;
+    line-height: .8;
+    letter-spacing: 1vh;
+    font-family: var(--font-secondary);
+  }
+
+  .heading-menu {
+    letter-spacing: -.06em;
+    font-size: 7.5em;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .heading-title,
+  .heading-title-bold {
+    letter-spacing: -.06em;
+    font-size: 4em;
+    line-height: 1;
+  }
+
+  .heading-title {
+    font-weight: 500;
+  }
+
+  .heading-title-bold {
+    font-weight: 700;
+  }
+
+  h2,
+  .h2,
+  .heading-large,
+  .heading-large-bold {
+    font-size: 5em;
+    line-height: 1;
+    letter-spacing: -.06em;
+  }
+
+  .heading-large {
+    font-weight: 500;
+  }
+
+  h2,
+  .h2,
+  .heading-large-bold {
+    font-weight: 700;
+  }
+
+  h3,
+  .h3,
+  .heading-medium {
+    letter-spacing: -.06em;
+    font-size: 3.125em;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  h4,
+  .h4,
+  .heading-regular {
+    letter-spacing: -.06em;
+    font-size: 1.87em;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  h5,
+  .h5,
+  .heading-main,
+  .heading-main-semi-bold {
+    letter-spacing: normal;
+    font-size: 1.125em;
+    line-height: 1.4;
+  }
+
+  .heading-main {
+    font-weight: 400;
+  }
+
+  h5,
+  .h5,
+  .heading-main-semi-bold {
+    font-weight: 600;
+  }
+
+  .heading-btn {
+    z-index: 3;
+    letter-spacing: -.06em;
+    white-space: nowrap;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 1em;
+    font-weight: 500;
+    line-height: 1;
+    position: relative;
+  }
+
+  h6,
+  .h6,
+  .heading-small {
+    letter-spacing: -.06em;
+    font-size: .875em;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+}
+
+@layer components {
+  .menu-fade-enter-active,
+  .menu-fade-leave-active {
+    transition: opacity .3s ease, transform .3s ease;
+  }
+
+  .menu-fade-enter-from,
+  .menu-fade-leave-to {
+    opacity: 0;
+    transform: translateY(30%);
+  }
+
+  .menu-fade-enter-to,
+  .menu-fade-leave-from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@theme {
+  --color-primary: #D17AB3;
+  --color-secondary: #E6ABBF;
+  --color-peach: #F9CEB9;
+  --color-lavender-old: #796572;
+  --color-lavender-gray: #BDB6D7;
+  --color-lavender-deep: #8F5BBD;
+  --color-blue-blizzard: #9FD7EA;
+
+  --font-primary: 'Inter', 'sans-serif';
+  --font-secondary: 'Mango Grotesque', 'sans-serif';
+}
