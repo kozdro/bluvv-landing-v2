@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   modules: [
     [
       '@storyblok/nuxt', {
-        accessToken: 'z4r3HaOaLnBT2QFO4EraMAtt',
+        accessToken: import.meta.env.VITE_STORYBLOK_TOKEN,
       },
     ],
     '@nuxt/image',
