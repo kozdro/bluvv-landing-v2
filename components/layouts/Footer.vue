@@ -21,7 +21,8 @@
         <div class="relative bg-white size-40 rounded-full">
           <StoryblokImage
             :image="story?.content?.image"
-            class="w-full"
+            :webp-format="false"
+            class="w-full object-center object-contain"
           />
         </div>
       </div>

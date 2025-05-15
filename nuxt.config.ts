@@ -6,14 +6,13 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
   modules: [
-    [
-      '@storyblok/nuxt', {
-        accessToken: import.meta.env.VITE_STORYBLOK_TOKEN,
-      },
-    ],
+    '@storyblok/nuxt',
     '@nuxt/image',
     '@nuxt/fonts',
   ],
+  storyblok: {
+    accessToken: import.meta.env.VITE_STORYBLOK_TOKEN,
+  },
   fonts: {
     defaults: {
       weights: [400, 500, 700, 900],

@@ -1,10 +1,10 @@
 <template>
   <NuxtImg
     v-if="image"
-    :src="`${image.filename}/m/`"
+    :src="webpFormat ? `${image.filename}/m/` : image.filename"
     :alt="image.alt"
     :title="image.title || image.alt"
-    format="webp"
+    :format="webpFormat ? 'webp' : undefined"
   />
 </template>
 
@@ -13,7 +13,10 @@ import type { Image } from '~/types/storyblok'
 
 interface Props {
   image: Image
+  webpFormat?: boolean
 }
 
-defineProps<Props>()
+withDefaults(defineProps<Props>(), {
+  webpFormat: true,
+})
 </script>

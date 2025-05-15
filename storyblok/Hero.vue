@@ -34,6 +34,12 @@
         />
       </div>
     </div>
+
+    <HTMLText
+      v-if="blok.caption"
+      :content="blok.caption"
+      class="absolute bottom-4 left-0"
+    />
   </section>
 </template>
 
@@ -49,6 +55,7 @@ interface Props {
   blok: {
     heading: string
     images: Image[]
+    caption?: any
   }
 }
 

@@ -8,6 +8,7 @@
         <StoryblokImage
           :image="story?.content?.logo"
           fit="cover"
+          class="h-16"
         />
       </NuxtLink>
       <button
@@ -70,7 +71,7 @@ const story = await useAsyncStoryblok('layouts/header', {
 })
 
 const handleScroll = () => {
-  isScrolled.value = window.scrollY > window.innerHeight
+  isScrolled.value = window.scrollY > (window.innerHeight - 120)
 }
 
 const blockBodyScrolling = (isBlocked: boolean) => document?.body.style.setProperty('overflow', isBlocked ? 'hidden' : null)
