@@ -12,7 +12,7 @@
         />
       </NuxtLink>
       <button
-        class="flex flex-col gap-2 justify-center items-center cursor-pointer"
+        class="flex flex-col gap-2 justify-center items-center cursor-pointer p-4"
         @click="isOpen = !isOpen"
       >
         <div

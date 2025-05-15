@@ -1,6 +1,7 @@
 <template>
   <section
     v-editable="blok"
+    ref="sectionRef"
     class="hero container h-screen flex items-center justify-center relative overflow-hidden"
   >
     <h1 class="text-center uppercase">
@@ -61,6 +62,7 @@ interface Props {
 
 const props = defineProps<Props>()
 
+const sectionRef = ref<HTMLElement | null>(null)
 const topLine = ref<HTMLElement | null>(null)
 const bottomLine = ref<HTMLElement | null>(null)
 const layers = ref<Array<HTMLElement>>([])
@@ -81,8 +83,10 @@ const layerClasses = computed<string[]>(() => [
 ])
 
 onMounted(async() => {
+  await nextTick()
+
   if (props.blok?.images) {
-    layers.value.forEach((layer, i) => {
+    layers.value?.forEach((layer, i) => {
       gsap.to(layer, {
         y: i % 2 === 0 ? -20 : 20,
         repeat: -1,
@@ -127,5 +131,34 @@ onMounted(async() => {
       },
     })
   }
+
+  const repelX = layers.value.map(layer => gsap.quickTo(layer, 'x', { duration: 0.3 }))
+  const repelY = layers.value.map(layer => gsap.quickTo(layer, 'y', { duration: 0.3 }))
+
+  const handleMove = (e: MouseEvent) => {
+    const rect = sectionRef.value!.getBoundingClientRect()
+    const mouseX = e.clientX - rect.left
+    const mouseY = e.clientY - rect.top
+
+    layers.value.forEach((layer, i) => {
+      const layerRect = layer.getBoundingClientRect()
+      const centerX = layerRect.left + layerRect.width / 2 - rect.left
+      const centerY = layerRect.top + layerRect.height / 2 - rect.top
+
+      const dx = mouseX - centerX
+      const dy = mouseY - centerY
+      const distance = Math.sqrt(dx * dx + dy * dy)
+
+      if (distance < 180) {
+        repelX[i](-dx * 0.4)
+        repelY[i](-dy * 0.4)
+      } else {
+        repelX 
+        repelY 
+      }
+    })
+  }
+
+  sectionRef.value?.addEventListener('mousemove', handleMove)
 })
 </script>
