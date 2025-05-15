@@ -1,5 +1,8 @@
 <template>
-  <div class="overflow-hidden w-full text-black relative py-10">
+  <div
+    v-editable="blok"
+    class="text-ticker overflow-hidden w-full text-black relative py-10"
+  >
     <div
       ref="topWrapperRef"
       class="will-change-transform py-4"

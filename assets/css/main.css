@@ -13,11 +13,19 @@
   }
 
   .container {
-    max-width: 1640px;
-    padding-left: 3vw;
-    padding-right: 3vw;
+    max-width: 90rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 768px) {
+    .container {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
   }
 
   h1,
