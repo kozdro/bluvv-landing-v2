@@ -4,19 +4,20 @@
     class="hero-banner relative overflow-hidden py-16 md:py-32 min-h-screen transition-colors duration-500"
     :style="{ background: currentBackground }"
   >
-    <div class="container flex flex-col md:flex-row gap-20 mt-30">
+    <div class="container flex flex-col md:flex-row gap-20 mt-24 md:mt-30">
       <div class="md:basis-1/2">
         <div class="w-10 h-2 rounded-lg bg-white mb-5" />
         <HTMLText :content="blok.content" />
 
         <div
           v-if="blok.cta?.length"
-          class="flex items-center gap-6 mt-10"
+          class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 mt-4 md:mt-10"
         >
           <Button
             v-for="(cta, index) in blok.cta"
             :key="cta._uid"
             :variant="index % 2 ? ButtonVariant.Primary : ButtonVariant.Secondary"
+            :width="$viewport.isLessThan('md') ? ButtonWidth.Full : ButtonWidth.Fit"
             :href="cta.link.url"
             :target="cta.link.target"
             :label="cta.label"
@@ -26,12 +27,12 @@
     </div>
     <div
       v-if="blok.image"
-      class="absolute top-1/2 -translate-y-1/2 right-1/4 translate-x-1/4"
+      class="relative md:absolute -bottom-16 md:bottom-0 right-0"
     >
       <StoryblokImage
         :image="blok.image"
         fit="cover"
-        class="h-[80vh] drop-shadow-xl object-cover object-center rounded-4xl"
+        class="drop-shadow-xl object-cover object-center"
       />
     </div>
   </section>
@@ -39,7 +40,7 @@
 
 <script setup lang="ts">
 import type { CTA, Image } from '~/types/storyblok'
-import { ButtonVariant } from '~/types'
+import { ButtonVariant, ButtonWidth } from '~/types'
 
 interface Props {
   blok: {
