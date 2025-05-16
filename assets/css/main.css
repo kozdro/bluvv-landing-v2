@@ -30,9 +30,9 @@
 
   h1,
   .h1 {
-    font-size: 160px;
+    font-size: 80px;
     font-weight: 900;
-    line-height: 0.8;
+    line-height: 1;
     letter-spacing: 4px;
   }
 
@@ -134,7 +134,7 @@
   @media (max-width: 1024px) {
     h1,
     .h1 {
-      font-size: 100px;
+      font-size: 64px;
     }
 
     .heading-hero {
@@ -173,7 +173,7 @@
   @media (max-width: 640px) {
     h1,
     .h1 {
-      font-size: 72px;
+      font-size: 48px;
     }
 
     .heading-hero {

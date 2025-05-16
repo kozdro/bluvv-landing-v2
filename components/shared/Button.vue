@@ -8,7 +8,7 @@
     :disabled="disabled || loading"
     :type="href ? null : (type === 'submit' ? 'submit' : 'button')"
     :target="openInNewWindow ? '_blank' : '_self'"
-    class="button relative inline-flex items-center justify-center gap-5 shrink-0 border rounded-[70px] cursor-pointer disabled:pointer-events-none py-4 px-6 group overflow-hidden before:absolute before:inset-0 before:scale-x-0 before:origin-left before:transition-transform before:duration-500 before:ease-out before:z-0 before:rounded-[inherit] hover:before:scale-x-100"
+    class="button relative inline-flex items-center justify-center gap-5 shrink-0 rounded-[70px] cursor-pointer disabled:pointer-events-none py-4 px-6 group overflow-hidden before:absolute before:inset-0 before:scale-x-0 before:origin-left before:transition-transform before:duration-500 before:ease-out before:z-0 before:rounded-[inherit] hover:before:scale-x-100"
     :class="[
       ButtonWidthClasses[width],
       ButtonVariantClasses[variant],
@@ -54,7 +54,7 @@ const ButtonWidthClasses = {
 
 const ButtonVariantClasses = {
   [ButtonVariant.Primary]: 'bg-primary text-white focus:ring-2 focus:ring-primary/50 active:bg-primary/70 before:bg-secondary',
-  [ButtonVariant.Secondary]: 'bg-secondary text-black focus:ring-2 focus:ring-secondary/50 active:bg-secondary/70 before:bg-primary',
+  [ButtonVariant.Secondary]: 'bg-secondary text-white focus:ring-2 focus:ring-secondary/50 active:bg-secondary/70 before:bg-primary',
   [ButtonVariant.Tertiary]: 'bg-white text-primary focus:ring-2 focus:ring-secondary/50 active:bg-primary active:text-white before:bg-white/80',
   [ButtonVariant.OutlinePrimary]: 'border-2 border-primary text-primary hover:bg-primary hover:text-white focus:ring-2 focus:ring-primary/50 active:bg-primary/70',
   [ButtonVariant.OutlineSecondary]: 'border-2 border-secondary text-black hover:bg-primary hover:text-white focus:ring-2 focus:ring-primary/50 active:bg-primary/70',
