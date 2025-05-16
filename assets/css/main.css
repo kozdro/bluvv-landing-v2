@@ -29,9 +29,15 @@
   }
 
   h1,
-  .h1,
-  .heading-hero {
+  .h1 {
     font-size: 160px;
+    font-weight: 900;
+    line-height: 0.8;
+    letter-spacing: 4px;
+  }
+
+  .heading-hero {
+    font-size: 300px;
     font-weight: 900;
     line-height: 0.8;
     letter-spacing: 4px;
@@ -127,9 +133,12 @@
 
   @media (max-width: 1024px) {
     h1,
-    .h1,
-    .heading-hero {
+    .h1 {
       font-size: 100px;
+    }
+
+    .heading-hero {
+      font-size: 200px;
     }
 
     .heading-menu {
@@ -163,9 +172,12 @@
 
   @media (max-width: 640px) {
     h1,
-    .h1,
-    .heading-hero {
+    .h1 {
       font-size: 72px;
+    }
+
+    .heading-hero {
+      font-size: 130px;
     }
 
     .heading-menu {

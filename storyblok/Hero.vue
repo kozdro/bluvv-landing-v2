@@ -7,12 +7,12 @@
     <h1 class="text-center uppercase">
       <div
         ref="topLine"
-        class="origin-center"
+        class="origin-center heading-hero"
         v-text="topText"
       />
       <div
         ref="bottomLine"
-        class="origin-center"
+        class="origin-center heading-hero"
         v-text="bottomText"
       />
     </h1>
@@ -73,10 +73,10 @@ const bottomText = computed<string>(() => {
 
 
 const layerClasses = computed<string[]>(() => [
-  'top-20 md:top-10 right-1/4 z-10 bg-primary size-44',
-  'top-1/5 md:top-2/5 -left-4 md:left-40 rotate-2deg z-10 bg-peach size-40',
+  'top-20 md:top-10 right-1/7 md:right-1/4 z-10 bg-primary size-44',
+  'top-1/7 md:top-2/5 -left-4 md:left-40 rotate-2deg z-10 bg-peach size-40',
   'bottom-0 left-2/3 md:left-1/3 rotate-[-2deg] z-10 bg-blue-blizzard size-60',
-  'bottom-1/5 md:bottom-1/4 right-24 z-10 bg-lavender-old size-50',
+  'bottom-1/8 md:bottom-1/4 right-24 z-10 bg-lavender-old size-50',
 ])
 
 onMounted(async() => {
