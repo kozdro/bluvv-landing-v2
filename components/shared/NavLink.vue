@@ -10,7 +10,7 @@
   >
     {{ label }}
     <span
-      class="absolute left-0 -bottom-3 h-3 w-full bg-peach origin-left transition-transform duration-700 rounded-2xl delay-150"
+      class="absolute left-0 -bottom-3 h-1.5 md:h-3 w-full bg-peach origin-left transition-transform duration-700 rounded-2xl delay-150"
       :class="[
         active ? 'scale-x-100' : 'scale-x-0',
         'group-hover:scale-x-100'

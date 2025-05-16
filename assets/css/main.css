@@ -31,24 +31,24 @@
   h1,
   .h1,
   .heading-hero {
-    font-size: 40vh;
+    font-size: 160px;
     font-weight: 900;
-    line-height: .8;
-    letter-spacing: 1vh;
+    line-height: 0.8;
+    letter-spacing: 4px;
     font-family: var(--font-secondary);
   }
 
   .heading-menu {
-    letter-spacing: -.06em;
-    font-size: 7.5em;
+    letter-spacing: -0.06em;
+    font-size: 120px;
     font-weight: 700;
     line-height: 1;
   }
 
   .heading-title,
   .heading-title-bold {
-    letter-spacing: -.06em;
-    font-size: 4em;
+    letter-spacing: -0.06em;
+    font-size: 64px;
     line-height: 1;
   }
 
@@ -64,9 +64,9 @@
   .h2,
   .heading-large,
   .heading-large-bold {
-    font-size: 5em;
+    font-size: 80px;
     line-height: 1;
-    letter-spacing: -.06em;
+    letter-spacing: -0.06em;
   }
 
   .heading-large {
@@ -82,8 +82,8 @@
   h3,
   .h3,
   .heading-medium {
-    letter-spacing: -.06em;
-    font-size: 3.125em;
+    letter-spacing: -0.06em;
+    font-size: 50px;
     font-weight: 500;
     line-height: 1;
   }
@@ -91,8 +91,8 @@
   h4,
   .h4,
   .heading-regular {
-    letter-spacing: -.06em;
-    font-size: 1.87em;
+    letter-spacing: -0.06em;
+    font-size: 30px;
     font-weight: 500;
     line-height: 1;
   }
@@ -102,7 +102,7 @@
   .heading-main,
   .heading-main-semi-bold {
     letter-spacing: normal;
-    font-size: 1.125em;
+    font-size: 18px;
     line-height: 1.4;
   }
 
@@ -119,10 +119,82 @@
   h6,
   .h6,
   .heading-small {
-    letter-spacing: -.06em;
-    font-size: .875em;
+    letter-spacing: -0.06em;
+    font-size: 14px;
     font-weight: 500;
     line-height: 1.4;
+  }
+
+  @media (max-width: 1024px) {
+    h1,
+    .h1,
+    .heading-hero {
+      font-size: 100px;
+    }
+
+    .heading-menu {
+      font-size: 80px;
+    }
+
+    .heading-title,
+    .heading-title-bold {
+      font-size: 48px;
+    }
+
+    h2,
+    .h2,
+    .heading-large,
+    .heading-large-bold {
+      font-size: 56px;
+    }
+
+    h3,
+    .h3,
+    .heading-medium {
+      font-size: 36px;
+    }
+
+    h4,
+    .h4,
+    .heading-regular {
+      font-size: 24px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    h1,
+    .h1,
+    .heading-hero {
+      font-size: 72px;
+    }
+
+    .heading-menu {
+      font-size: 48px;
+    }
+
+    .heading-title,
+    .heading-title-bold {
+      font-size: 32px;
+    }
+
+    h2,
+    .h2,
+    .heading-large,
+    .heading-large-bold {
+      font-size: 40px;
+    }
+
+    h3,
+    .h3,
+    .heading-medium {
+      font-size: 28px;
+    }
+
+    h4,
+    .h4,
+    .heading-regular {
+      font-size: 20px;
+    }
   }
 }
 

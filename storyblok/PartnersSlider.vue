@@ -4,20 +4,20 @@
     class="partners-slider py-16 md:py-32"
   >
     <div class="container flex flex-col md:flex-row items-center gap-10">
-      <div class="basis-1/2">
+      <div class="md:basis-1/2">
         <div class="w-10 h-2 rounded-lg bg-peach mb-5" />
         <HTMLText :content="blok.heading" />
       </div>
-      <div class="basis-1/2">
+      <div class="md:basis-1/2">
         <HTMLText
           v-if="blok.description"
           :content="blok.description"
-          class="w-3/4 [&>*]:font-normal mx-auto"
+          class="md:w-3/4 [&>*]:font-normal md:mx-auto"
         />
       </div>
     </div>
 
-    <div class="overflow-hidden w-full mt-24">
+    <div class="overflow-hidden w-full mt-20 md:mt-24">
       <div
         ref="trackRef"
         class="flex animate-slider will-change-transform min-w-max"
@@ -26,7 +26,7 @@
           v-for="img in repeatedImages"
           :key="img._uid"
         >
-          <div class="shrink-0 flex items-center justify-center border-y border-r border-gray-200 w-90 px-10 py-8">
+          <div class="shrink-0 flex items-center justify-center border-y border-r border-gray-200 w-44 md:w-90 px-10 py-4 md:py-8">
             <StoryblokImage
               :image="img"
               fit="contain"

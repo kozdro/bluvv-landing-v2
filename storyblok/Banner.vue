@@ -8,17 +8,20 @@
       :style="{ background: blok.backgroundColor }"
     >
       <div class="flex gap-10">
-        <div class="basis-2/3 flex flex-col py-24">
+        <div class="md:basis-2/3 flex flex-col py-16 md:py-24">
           <div class="w-10 h-2 rounded-lg bg-white mb-5" />
           <HTMLText :content="blok.heading" />
           <HTMLText
             v-if="blok.description"
             :content="blok.description"
-            class="mt-auto ml-40 mb-4"
+            class="my-16 md:mt-auto md:ml-40 md:mb-4"
           />
         </div>
 
-        <div class="basis-1/3">
+        <div
+          v-if="$viewport.isGreaterOrEquals('md')"
+          class="basis-1/3"
+        >
           <StoryblokImage
             :image="blok.image"
             fit="cover"

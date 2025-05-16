@@ -33,9 +33,9 @@
       >
         <div
           v-if="isOpen"
-          class="fixed inset-0 top-30 bg-white z-50 flex"
+          class="fixed inset-0 top-30 bg-white z-50 flex flex-col md:flex-row"
         >
-          <div class="basis-1/2 flex flex-col justify-end items-start gap-3 pb-10 pl-[10vw]">
+          <div class="md:basis-1/2 flex flex-col md:justify-end items-start gap-3 pb-10 pl-4 md:pl-[10vw] mt-10 md:mt-0">
             <NavLink
               v-for="link in story?.content?.menu"
               :key="link._uid"
@@ -45,7 +45,7 @@
               class="heading-menu"
             />
           </div>
-          <div class="basis-1/2 flex items-end pb-10 pl-[3vw]">
+          <div class="md:basis-1/2 flex md:items-end pb-10 pl-4 md:pl-[3vw] mt-auto">
             <div class="flex flex-col items-start">
               <div class="w-10 h-2 rounded-lg bg-primary mb-5" />
               <HTMLText

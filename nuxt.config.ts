@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/fonts',
     'nuxt-svgo',
+    'nuxt-viewport',
   ],
   storyblok: {
     accessToken: import.meta.env.VITE_STORYBLOK_TOKEN,
@@ -35,6 +36,15 @@ export default defineNuxtConfig({
       'storyblok.com',
       'a.storyblok.com',
     ],
+  },
+  viewport: {
+    breakpoints: {
+      sm: 340,
+      md: 768,
+      lg: 1024,
+      desktopMedium: 1280,
+      desktopWide: 1440,
+    },
   },
   components: [
     {
