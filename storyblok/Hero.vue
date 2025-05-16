@@ -46,11 +46,8 @@
 
 <script setup lang="ts">
 import gsap from 'gsap'
-import ScrollTrigger from 'gsap/ScrollTrigger'
 
 import { type Image } from '~/types/storyblok/Image'
-
-gsap.registerPlugin(ScrollTrigger)
 
 interface Props {
   blok: {
