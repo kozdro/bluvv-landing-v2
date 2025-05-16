@@ -1,3 +1,4 @@
+export * from './CTA'
 export * from './Feature'
 export * from './Image'
 export * from './Link'

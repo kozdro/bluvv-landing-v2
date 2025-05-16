@@ -21,8 +21,8 @@
         <div class="basis-1/3">
           <StoryblokImage
             :image="blok.image"
-            fit="contain"
-            class="ml-auto w-2/3 h-full shadow-xl object-contain object-center"
+            fit="cover"
+            class="ml-auto w-2/3 h-full shadow-xl object-cover object-center"
           />
         </div>
       </div>
@@ -31,8 +31,8 @@
         <StoryblokImage
           v-if="blok.logo"
           :image="blok.logo"
-          fit="contain"
-          class="object-contain object-center w-2/3"
+          fit="cover"
+          class="object-cover object-center w-2/3"
         />
 
         <div

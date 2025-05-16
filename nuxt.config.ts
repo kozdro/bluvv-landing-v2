@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     '@storyblok/nuxt',
     '@nuxt/image',
     '@nuxt/fonts',
+    'nuxt-svgo',
   ],
   storyblok: {
     accessToken: import.meta.env.VITE_STORYBLOK_TOKEN,

@@ -116,18 +116,6 @@
     font-weight: 600;
   }
 
-  .heading-btn {
-    z-index: 3;
-    letter-spacing: -.06em;
-    white-space: nowrap;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    font-size: 1em;
-    font-weight: 500;
-    line-height: 1;
-    position: relative;
-  }
-
   h6,
   .h6,
   .heading-small {

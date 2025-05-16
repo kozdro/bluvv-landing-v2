@@ -14,7 +14,7 @@
     <div
       v-for="(feature, index) in blok.list"
       :key="feature._uid"
-      class="flex flex-col relative group rounded-4xl p-6 hover:bg-blue-blizzard transition-colors duration-500"
+      class="flex flex-col relative group rounded-4xl p-6 hover:bg-blue-blizzard transition-colors duration-500 cursor-default"
     >
       <span
         class="bg-gray-100 text-sm font-semibold h-8 w-11 rounded-2xl flex items-center justify-center group-hover:text-blue-blizzard mb-12 transition-colors duration-300"
