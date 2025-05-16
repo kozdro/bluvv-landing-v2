@@ -21,7 +21,7 @@ const circles = [
   { size: '400px', color: 'var(--color-primary)', top: '-5%', left: '-5%' },
   { size: '500px', color: 'var(--color-peach)', top: '20%', right: '0%' },
   { size: '300px', color: 'var(--color-blue-blizzard)', top: '50%', left: '30%' },
-  { size: '600px', color: 'var(--color-lavender-deep)', top: '80%', right: '0%' },
-  { size: '350px', color: 'var(--color-secondary)', top: '95%', left: '0%' },
+  { size: '300px', color: 'var(--color-secondary)', top: '80%', right: '-10%' },
+  { size: '600px', color: 'var(--color-lavender-deep)', top: '95%', left: '0%' },
 ]
 </script>

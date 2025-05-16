@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     'nuxt-svgo',
     'nuxt-viewport',
+    '@nuxtjs/i18n',
   ],
   storyblok: {
     accessToken: import.meta.env.VITE_STORYBLOK_TOKEN,
@@ -52,6 +53,12 @@ export default defineNuxtConfig({
       pathPrefix: false,
     }
   ],
+  i18n: {
+    defaultLocale: 'en',
+    locales: [
+      { code: 'en', language: 'en-US', file: 'en.json' },
+    ],
+  },
   vite: {
     plugins: [
       tailwindcss(),

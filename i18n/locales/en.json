@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "title": "",
+    "description": "",
+    "ogTitle": "",
+    "ogDescription": ""
+  },
+  "error": {
+    "404": "",
+    "500": "",
+    "default": "",
+    "go_home": ""
+  }
+}
