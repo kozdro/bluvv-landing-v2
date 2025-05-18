@@ -33,6 +33,7 @@
         <StoryblokImage
           :image="feature.icon"
           :webp-format="false"
+          fit="contain"
           class="size-full object-contain object-center"
         />
       </div>
