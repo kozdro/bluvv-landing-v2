@@ -16,9 +16,10 @@
     style="wordBreak: break-word;"
     @click="emit('click')"
   >
+    <span class="flex-1" />
     <slot>
       <span
-        class="relative z-10 py-2 font-medium text-lg tracking-[-.06em] whitespace-nowrap"
+        class="relative z-10 py-2 font-medium text-lg text-center tracking-[-.06em] whitespace-nowrap flex-1"
         :class="{ 'blur-sm': loading }"
         v-text="label"
       />
@@ -27,14 +28,17 @@
         class="absolute"
       />
     </slot>
-    <div
-      class="ml-auto size-10 rounded-full bg-gray-200 flex items-center justify-center group-hover:bg-white transition-all duration-500 relative z-10 delay-100 group-hover:scale-105"
-      :class="{ 'blur-sm': loading }"
-    >
-      <SvgoArrowRight
-        filled
-        class="!mb-0 !size-3 text-black"
-      />
+    <div class="flex-1">
+      <div
+        v-if="arrowRight"
+        class="ml-auto size-10 rounded-full bg-gray-200 flex items-center justify-center group-hover:bg-white transition-all duration-500 relative z-10 delay-100 group-hover:scale-105"
+        :class="{ 'blur-sm': loading }"
+      >
+        <SvgoArrowRight
+          filled
+          class="!mb-0 !size-3 text-black"
+        />
+      </div>
     </div>
   </component>
 </template>
@@ -65,7 +69,6 @@ interface Props {
   disabled?: boolean
   loading?: boolean
   openInNewWindow?: boolean
-  arrowLeft?: boolean
   arrowRight?: boolean
 }
 
@@ -77,7 +80,6 @@ const props = withDefaults(defineProps<Props>(), {
   disabled: false,
   loading: false,
   openInNewWindow: false,
-  arrowLeft: false,
   arrowRight: true,
 })
 
