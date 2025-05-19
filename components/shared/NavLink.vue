@@ -2,19 +2,13 @@
   <NuxtLink
     :to="to"
     :target="target"
-    class="group relative inline-block transition-[transform, colors] duration-700 ease-out hover:text-peach"
-    :class="[
-      active ? 'text-peach translate-x-2' : 'text-black',
-      'hover:translate-x-8'
-    ]"
+    class="group relative inline-block transition-[transform, colors] duration-700 ease-out hover:text-peach hover:translate-x-8"
+    :class="active ? 'text-peach translate-x-8' : 'text-black'"
   >
     {{ label }}
     <span
-      class="absolute left-0 -bottom-3 h-1.5 md:h-3 w-full bg-peach origin-left transition-transform duration-700 rounded-2xl delay-150"
-      :class="[
-        active ? 'scale-x-100' : 'scale-x-0',
-        'group-hover:scale-x-100'
-      ]"
+      class="absolute left-0 -bottom-3 h-1.5 md:h-3 w-full bg-peach origin-left transition-transform duration-700 rounded-2xl delay-150 group-hover:scale-x-100"
+      :class="active ? 'scale-x-100' : 'scale-x-0'"
     />
   </NuxtLink>
 </template>
@@ -27,7 +21,10 @@ interface Props {
   exact?: boolean
 }
 
-const props = defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+  target: '_self',
+  exact: true,
+})
 
 const route = useRoute()
 
