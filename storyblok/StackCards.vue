@@ -1,7 +1,10 @@
 <template>
-  <section class="container py-16 md:py-32">
-    <div class="stack-cards-wrapper flex items-center justify-center min-h-svh -mt-[50svh]">
-      <div class="basis-1/2 flex flex-col gap-8 relative">
+  <section
+    v-editable="blok"
+    class="stack-cards container py-16 md:py-32"
+  >
+    <div class="stack-cards-wrapper flex flex-col lg:flex-row items-center justify-center min-h-svh lg:-mt-[50svh] gap-16">
+      <div class="w-full lg:basis-1/2 flex flex-col gap-8 relative">
         <div>
           <div class="w-10 h-2 rounded-lg bg-lavender-deep mb-5" />
           <HTMLText :content="blok.heading" />
@@ -24,11 +27,11 @@
         </div>
       </div>
 
-      <ul class="basis-1/2 stack-cards grid w-full">
+      <ul class="w-full lg:basis-1/2 stack-cards-content grid">
         <li
           v-for="(card, index) in blok.cards"
           :key="card._uid"
-          class="stack-card h-full min-h-auto container py-10 rounded-4xl relative shadow-xl group"
+          class="stack-card min-h-[60svh] sm:min-h-[70svh] md:min-h-[80svh] lg:min-h-auto container py-10 rounded-4xl relative shadow-xl group"
           :style="{
             backgroundColor: card.backgroundColor,
           }"
@@ -39,14 +42,14 @@
           />
           <HTMLText
             :content="card.content"
-            class="[&_p]:w-3/4 [&_p]:mx-auto [&_p]:text-lg"
+            class="lg:[&_p]:w-3/4 [&_p]:mx-auto [&_p]:text-lg text-center lg:text-left"
           />
           <StoryblokImage
             v-if="card.image"
             :image="card.image"
             :webp-format="false"
             fit="contain"
-            class="absolute top-1/2 -translate-y-1/2 -right-12 size-24 object-contain object-center group-hover:rotate-15 transition-transform duration-500"
+            class="absolute -top-12 right-1/2 translate-x-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-0 lg:-right-12 size-24 object-contain object-center group-hover:rotate-15 transition-transform duration-500"
           />
         </li>
       </ul>
@@ -104,6 +107,7 @@ onMounted(async () => {
   tl.from('.stack-card', {
     y: () => window.innerHeight,
     rotationX: 100,
+    opacity: 0,
     duration: time / 2,
     stagger: time
   })
@@ -112,6 +116,7 @@ onMounted(async () => {
     '.stack-card:not(:last-child)',
     {
       scale: 0.9,
+      opacity: 0,
       duration: time / 2,
       stagger: {
         each: time
@@ -135,7 +140,7 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-.stack-cards {
+.stack-cards-content {
   > * {
     grid-area: 1 / 1 / 2 / 2;
   }

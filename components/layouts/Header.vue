@@ -1,7 +1,10 @@
 <template>
   <header
-    class="fixed w-full z-20 py-10 transition-colors duration-300"
-    :class="isScrolled || isOpen ? 'bg-white' : 'bg-transparent'"
+    class="fixed w-full z-20 py-10 transition-all duration-300"
+    :class="[
+      isScrolled || isOpen ? 'bg-white' : 'bg-transparent',
+      isVisible ? 'translate-y-0' : '-translate-y-full',
+    ]"
   >
     <div class="container flex items-center justify-between h-10">
       <NuxtLink to="/">
@@ -12,6 +15,7 @@
         />
       </NuxtLink>
       <button
+        type="button"
         class="flex flex-col gap-2 justify-center items-center cursor-pointer p-4"
         @click="isOpen = !isOpen"
       >
@@ -65,18 +69,31 @@ const route = useRoute()
 
 const isScrolled = ref<boolean>(false)
 const isOpen = ref<boolean>(false)
+const isVisible = ref<boolean>(true)
+let lastScroll = 0
 
 const story = await useAsyncStoryblok('layouts/header', {
   version: 'draft',
 })
 
 const handleScroll = () => {
-  isScrolled.value = window.scrollY > (window.innerHeight - 120)
+  const current = window.scrollY
+  const scrollingDown = current > lastScroll
+
+  if (current > window.innerHeight) {
+    isVisible.value = !scrollingDown
+  } else {
+    isVisible.value = true
+  }
+
+  isScrolled.value = current > (window.innerHeight + 120)
+  lastScroll = current
 }
 
 const blockBodyScrolling = (isBlocked: boolean) => document?.body.style.setProperty('overflow', isBlocked ? 'hidden' : null)
 
 onMounted(() => {
+  lastScroll = window.scrollY
   window.addEventListener('scroll', handleScroll)
   handleScroll()
 })

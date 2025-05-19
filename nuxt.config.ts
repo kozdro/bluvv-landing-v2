@@ -4,6 +4,19 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
+  app: {
+    head: {
+      link: [
+        {
+          rel: 'preload',
+          href: '/mango-grotesque-900.woff2',
+          as: 'font',
+          type: 'font/woff2',
+          crossorigin: true
+        },
+      ],
+    },
+  },
   css: ['~/assets/css/main.css'],
   modules: [
     '@storyblok/nuxt',

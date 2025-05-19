@@ -16,31 +16,26 @@
     style="wordBreak: break-word;"
     @click="emit('click')"
   >
-    <!-- <ArrowLeftIcon
-      v-if="arrowLeft"
-      class="w-4"
-    /> -->
     <slot>
       <span
         class="relative z-10 py-2 font-medium text-lg tracking-[-.06em] whitespace-nowrap"
         :class="{ 'blur-sm': loading }"
         v-text="label"
       />
-      <!-- <Spinner
+      <Spinner
         v-if="loading"
         class="absolute"
-      /> -->
+      />
     </slot>
-    <div class="size-10 rounded-full bg-gray-200 flex items-center justify-center group-hover:bg-white transition-all duration-500 relative z-10 delay-100 group-hover:scale-105">
+    <div
+      class="ml-auto size-10 rounded-full bg-gray-200 flex items-center justify-center group-hover:bg-white transition-all duration-500 relative z-10 delay-100 group-hover:scale-105"
+      :class="{ 'blur-sm': loading }"
+    >
       <SvgoArrowRight
         filled
         class="!mb-0 !size-3 text-black"
       />
     </div>
-    <!-- <ArrowRightIcon
-      v-if="arrowRight"
-      class="w-4"
-    /> -->
   </component>
 </template>
 
