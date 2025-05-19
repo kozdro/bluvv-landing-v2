@@ -2,7 +2,7 @@
   <section class="error-page flex flex-col items-center justify-center h-screen text-center p-8">
     <div class="relative">
       <h1
-        class="text-primary uppercase"
+        class="heading-hero font-secondary text-primary uppercase"
         v-text="error?.statusCode || 'Oops...'"
       />
 
