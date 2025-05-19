@@ -18,7 +18,7 @@
     </h1>
 
     <div
-      v-if="blok.images"
+      v-if="blok.images?.length"
       class="absolute inset-0"
     >
       <div

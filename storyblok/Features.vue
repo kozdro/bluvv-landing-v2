@@ -4,7 +4,10 @@
     class="features container py-16 md:py-32 grid grid-cols-1 md:grid-cols-4 gap-10 auto-cols-[1fr] grid-rows-[auto]"
   >
     <div class="md:col-span-2 flex flex-col items-start">
-      <div class="w-10 h-2 rounded-lg bg-blue-blizzard mb-5" />
+      <div
+        class="w-10 h-2 rounded-lg mb-5"
+        :style="{ backgroundColor: extractTextColors(blok.heading)[0] }"
+      />
       <HTMLText :content="blok.heading" />
     </div>
 

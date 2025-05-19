@@ -5,7 +5,10 @@
   >
     <div class="container flex flex-col md:flex-row items-center gap-10">
       <div class="md:basis-1/2">
-        <div class="w-10 h-2 rounded-lg bg-peach mb-5" />
+        <div
+          class="w-10 h-2 rounded-lg mb-5"
+          :style="{ backgroundColor: extractTextColors(blok.heading)[0] }"
+        />
         <HTMLText :content="blok.heading" />
       </div>
       <div class="md:basis-1/2">

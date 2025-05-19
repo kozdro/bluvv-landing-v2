@@ -1,4 +1,10 @@
 {
+  "aria": {
+    "homepage": "Go to the homepage",
+    "mail": "Send email",
+    "phone": "Call us",
+    "image": "Show photo"
+  },
   "meta": {
     "title": "",
     "description": "",
@@ -6,9 +12,34 @@
     "ogDescription": ""
   },
   "error": {
-    "404": "",
-    "500": "",
-    "default": "",
-    "go_home": "Go to home"
+    "404": "Something’s not right.",
+    "500": "Sorry, something went wrong. Please try again later.",
+    "default": "An error occurred, please try again later.",
+    "go_home": "Go to homepage"
+  },
+  "form": {
+    "placeholder": {
+      "email": "Your email",
+      "name": "Your name",
+      "message": "Write here your message"
+    },
+    "label": {
+      "email": "E-mail",
+      "name": "Name",
+      "message": "Message"
+    },
+    "submit": "Submit",
+    "error": {
+      "name": "This field is required.",
+      "message": "This field is required and must contain at least 10 characters.",
+      "terms": "Acceptance of the terms is required.",
+      "email": {
+        "required": "This field is required.",
+        "invalid": "Invalid email address."
+      }
+    },
+    "privacy_policy_agreement": "I have read and I agree with",
+    "privacy_policy": "privacy policy",
+    "send_success": "The message has been sent!"
   }
 }

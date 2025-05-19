@@ -1,12 +1,16 @@
 <template>
   <section
     v-editable="blok"
-    class="hero-banner relative overflow-hidden py-16 md:py-32 min-h-screen transition-colors duration-500"
-    :style="{ background: currentBackground }"
+    class="hero-banner relative overflow-hidden py-16 md:py-32 transition-colors duration-500"
+    :class="blok.image?.filename ? 'min-h-screen' : 'min-h-[80vh]'"
+    :style="{ backgroundColor: currentBackground }"
   >
     <div class="container flex flex-col md:flex-row gap-20 mt-24 md:mt-30">
-      <div class="md:basis-1/2">
-        <div class="w-10 h-2 rounded-lg bg-white mb-5" />
+      <div :class="blok.image?.filename ? 'md:basis-1/2' : 'md:basis-3/4'">
+        <div
+          class="w-10 h-2 rounded-lg mb-5"
+          :style="{ backgroundColor: extractTextColors(blok.content)[0] }"
+        />
         <HTMLText :content="blok.content" />
 
         <div
@@ -26,7 +30,7 @@
       </div>
     </div>
     <div
-      v-if="blok.image"
+      v-if="blok.image?.filename"
       class="relative md:absolute -bottom-16 md:bottom-0 right-0"
     >
       <StoryblokImage

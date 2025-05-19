@@ -50,12 +50,15 @@
             />
           </div>
           <div class="md:basis-1/2 flex md:items-end pb-10 pl-4 md:pl-[3vw] mt-auto">
-            <div class="flex flex-col items-start">
-              <div class="w-10 h-2 rounded-lg bg-primary mb-5" />
-              <HTMLText
-                v-if="story?.content?.aside"
-                :content="story.content.aside"
+            <div
+              v-if="story?.content?.aside"
+              class="flex flex-col items-start"
+            >
+              <div
+                class="w-10 h-2 rounded-lg mb-5"
+                :style="{ backgroundColor: extractTextColors(story?.content?.aside)[0] }"
               />
+              <HTMLText :content="story.content.aside" />
             </div>
           </div>
         </div>
@@ -86,7 +89,7 @@ const handleScroll = () => {
     isVisible.value = true
   }
 
-  isScrolled.value = current > (window.innerHeight + 120)
+  isScrolled.value = (route.name as string)?.includes('index') ? (current > (window.innerHeight + 120)) : (current > 120)
   lastScroll = current
 }
 

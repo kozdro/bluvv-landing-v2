@@ -9,7 +9,10 @@
     >
       <div class="flex gap-10">
         <div class="md:basis-2/3 flex flex-col py-16 md:py-24">
-          <div class="w-10 h-2 rounded-lg bg-white mb-5" />
+          <div
+            class="w-10 h-2 rounded-lg mb-5"
+            :style="{ backgroundColor: extractTextColors(blok.heading)[0] }"
+          />
           <HTMLText :content="blok.heading" />
           <HTMLText
             v-if="blok.description"

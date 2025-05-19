@@ -1,7 +1,7 @@
 <template>
   <div
     v-html="resolvedRichText"
-    class="html-text [&_p]:pb-4"
+    class="html-text [&_p]:pb-4 [&_ul]:list-disc [&_ul]:ml-6"
   />
 </template>
 

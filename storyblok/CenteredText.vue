@@ -7,7 +7,10 @@
       v-if="blok.heading"
       class="flex flex-col md:w-1/2"
     >
-      <div class="w-10 h-2 rounded-lg bg-blue-blizzard mb-5" />
+      <div
+        class="w-10 h-2 rounded-lg mb-5"
+        :style="{ backgroundColor: extractTextColors(blok.heading)[0] }"
+      />
       <HTMLText :content="blok.heading" />
     </div>
     <div class="md:w-1/2 md:ml-auto md:mr-24">

@@ -4,6 +4,16 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
+  runtimeConfig: {
+    emailPass: process.env.VITE_EMAIL_PASS,
+    mailerLiteApiKey: process.env.VITE_MAILERLITE_API_KEY,
+    public: {
+      emailUser: process.env.VITE_EMAIL_USER,
+      contactEmail: process.env.VITE_CONTACT_EMAIL,
+      mailerLiteListId: process.env.VITE_MAILERLITE_LIST_ID,
+      googleTagId: process.env.VITE_GOOGLE_TAG_ID,
+    },
+  },
   app: {
     head: {
       link: [

@@ -8,14 +8,15 @@
             class="flex items-center gap-2 md:gap-4 mt-20"
             @submit.prevent="handleSubmit"
           >
-            <input
+            <Input
+              v-model="email"
               type="email"
-              placeholder="Your email"
-              class="bg-transparent border-b border-gray-500 placeholder-gray-500 outline-none flex-1 py-2 focus:px-2 transition-all duration-300"
+              required
+              :placeholder="$t('form.placeholder.email')"
             />
             <button
               type="submit"
-              class="flex items-center justify-center bg-white rounded-full size-10 md:size-16 transition-all duration-300 hover:scale-105 hover:bg-white/80 cursor-pointer"
+              class="shrink-0 flex items-center justify-center bg-white rounded-full size-10 md:size-16 transition-all duration-300 hover:scale-105 hover:bg-white/80 cursor-pointer"
             >
               <SvgoArrowRight
                 filled
@@ -74,6 +75,8 @@
 </template>
 
 <script setup lang="ts">
+const email = ref<string>('')
+
 const story = await useAsyncStoryblok('layouts/footer', {
   version: 'draft',
 })

@@ -4,7 +4,10 @@
     class="text-banner container py-16 md:py-32 flex flex-col gap-16 md:gap-24"
   >
     <div>
-      <div class="w-10 h-2 rounded-lg bg-primary mb-5" />
+      <div
+        class="w-10 h-2 rounded-lg mb-5"
+        :style="{ backgroundColor: extractTextColors(blok.heading)[0] }"
+      />
       <HTMLText
         :content="blok.heading"
         class="md:w-1/2"

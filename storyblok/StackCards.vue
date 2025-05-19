@@ -6,7 +6,10 @@
     <div class="stack-cards-wrapper flex flex-col lg:flex-row items-center justify-center min-h-svh lg:-mt-[50svh] gap-16">
       <div class="w-full lg:basis-1/2 flex flex-col gap-8 relative">
         <div>
-          <div class="w-10 h-2 rounded-lg bg-lavender-deep mb-5" />
+          <div
+            class="w-10 h-2 rounded-lg mb-5"
+            :style="{ backgroundColor: extractTextColors(blok.heading)[0] }"
+          />
           <HTMLText :content="blok.heading" />
         </div>
         <HTMLText
