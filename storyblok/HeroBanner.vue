@@ -31,12 +31,12 @@
     </div>
     <div
       v-if="blok.image?.filename"
-      class="relative lg:absolute -bottom-16 md:-bottom-32 lg:bottom-0 right-0 h-full lg:h-3/4 xl:h-full z-[1]"
+      class="relative lg:absolute -bottom-16 md:-bottom-32 lg:bottom-0 right-0 lg:h-3/4 xl:h-full z-[1] w-full lg:w-auto"
     >
       <StoryblokImage
         :image="blok.image"
         fit="cover"
-        class="drop-shadow-xl object-cover object-center h-full"
+        class="drop-shadow-xl object-cover object-center size-full"
       />
     </div>
   </section>
