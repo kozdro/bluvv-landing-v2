@@ -5,25 +5,52 @@
         <div>
           <HTMLText :content="story?.content?.newsletterContent" />
           <form
-            class="flex items-center gap-2 md:gap-4 mt-20"
+            v-if="!submitted"
+            novalidate
+            class="flex flex-col gap-4 md:gap-2 mt-20"
             @submit.prevent="handleSubmit"
           >
-            <Input
-              v-model="email"
-              type="email"
-              required
-              :placeholder="$t('form.placeholder.email')"
-            />
-            <button
-              type="submit"
-              class="shrink-0 flex items-center justify-center bg-white rounded-full size-10 md:size-16 transition-all duration-300 hover:scale-105 hover:bg-white/80 cursor-pointer"
-            >
-              <SvgoArrowRight
-                filled
-                class="!mb-0 !size-6 md:!size-8 text-black"
+            <div class="flex items-center gap-2 md:gap-4">
+              <Input
+                v-model="form.email"
+                id="newsletter-email"
+                type="email"
+                required
+                :placeholder="$t('newsletter.email_placeholder')"
+                :error="getEmailErrorMessage"
+                autocomplete="email"
               />
-            </button>
+              <button
+                type="submit"
+                class="shrink-0 flex items-center justify-center bg-white rounded-full size-10 md:size-16 transition-all duration-300 hover:scale-105 hover:bg-white/80 cursor-pointer"
+              >
+                <SvgoArrowRight
+                  filled
+                  class="!mb-0 !size-6 md:!size-8 text-black"
+                />
+              </button>
+            </div>
+            <Checkbox
+              v-model="form.termsAccepted"
+              id="newsletter_privacy_policy"
+              required
+              :error="v$.termsAccepted.$error ? termsError : ''"
+            >
+              {{ $t('newsletter.privacy_policy_agreement') }}
+              <NuxtLink
+                :to="localePath('/privacy-policy')"
+                :aria-label="$t('newsletter.privacy_policy')"
+                class="underline"
+              >
+                {{ $t('newsletter.privacy_policy') }}
+              </NuxtLink>
+            </Checkbox>
           </form>
+          <p
+            v-else
+            class="mt-20 text-lg text-green-500"
+            v-text="t('newsletter.success_message')"
+          />
         </div>
   
         <div class="flex items-center justify-center">
@@ -75,13 +102,64 @@
 </template>
 
 <script setup lang="ts">
-const email = ref<string>('')
+import useVuelidate from '@vuelidate/core'
+import { required, email, sameAs } from '@vuelidate/validators'
 
+const rules = {
+  email: { required, email },
+  termsAccepted: { required, sameAs: sameAs(true) },
+}
+
+const form = reactive({
+  email: '',
+  termsAccepted: false,
+})
+const submitted = ref<boolean>(false)
+const errorMessage = ref<string>('')
+
+const v$ = useVuelidate(rules, form)
+const localePath = useLocalePath()
+const { t } = useI18n()
 const story = await useAsyncStoryblok('layouts/footer', {
   version: 'draft',
 })
 
-const handleSubmit = (e) => {
-  console.log(e)
+const termsError = t('form.error.terms')
+
+const getEmailErrorMessage = computed(() => {
+  if (!v$.value?.email?.$error) return ''
+
+  if (!v$.value.email.required.$pending && !v$.value.email.required.$response) {
+    return t('form.error.email.required')
+  } else if (!v$.value.email.email.$pending && !v$.value.email.email.$response) {
+    return t('form.error.email.invalid')
+  }
+})
+
+const handleSubmit = async () => {
+  await v$.value.$validate()
+
+  if (v$.value.$invalid || v$.value.error) return
+
+  try {
+    const { data } = await $fetch('/api/newsletter', {
+      method: 'POST',
+      body: {
+        email: form.email,
+      },
+    })
+
+    if (data.success) {
+      submitted.value = true
+      form.email = ''
+      form.termsAccepted = false
+      v$.value.$reset()
+    } else {
+      errorMessage.value = t('newsletter.error_message')
+    }
+  } catch (error) {
+    console.error('Błąd podczas zapisu do newslettera: ', error)
+    errorMessage.value = t('newsletter.error_message')
+  }
 }
 </script>

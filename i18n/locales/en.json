@@ -41,5 +41,12 @@
     "privacy_policy_agreement": "I have read and I agree with",
     "privacy_policy": "privacy policy",
     "send_success": "The message has been sent!"
+  },
+  "newsletter": {
+    "success_message": "Thank you for signing up to our newsletter!",
+    "error_message": "Something went wrong, please try again later.",
+    "email_placeholder": "Enter your email",
+    "privacy_policy_agreement": "I consent to the processing of my data in accordance with the",
+    "privacy_policy": "privacy policy"
   }
 }

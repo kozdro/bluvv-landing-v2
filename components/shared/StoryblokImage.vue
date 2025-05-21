@@ -1,5 +1,5 @@
 <template>
-  <NuxtImg
+  <img
     v-if="image"
     :src="webpFormat ? `${image.filename}/m/` : image.filename"
     :alt="image.alt"

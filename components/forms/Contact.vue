@@ -86,7 +86,7 @@ const rules = {
 
 const { t } = useI18n()
 const localePath = useLocalePath()
-const v$ = useVuelidate(rules, form.value)
+const v$ = useVuelidate(rules, form)
 
 const nameError = t('form.error.name')
 const messageError = t('form.error.message')
