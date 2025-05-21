@@ -76,7 +76,7 @@ const isVisible = ref<boolean>(true)
 let lastScroll = 0
 
 const story = await useAsyncStoryblok('layouts/header', {
-  version: 'draft',
+  version: 'published',
 })
 
 const handleScroll = () => {

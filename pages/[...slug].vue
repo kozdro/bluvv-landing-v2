@@ -13,7 +13,7 @@ const { params } = useRoute()
 const slugPath = computed(() => Array.isArray(params.slug) ? params.slug.join('/') : params.slug)
 
 const story = await useAsyncStoryblok(`pages/${slugPath.value}`, {
-  version: 'draft',
+  version: 'published',
 })
 
 const metaData = computed(() => story.value?.content?.meta?.[0])

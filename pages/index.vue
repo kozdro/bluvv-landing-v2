@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
 const story = await useAsyncStoryblok('pages/home', {
-  version: 'draft',
+  version: 'published',
 })
 
 const metaData = computed(() => story.value?.content?.meta?.[0])

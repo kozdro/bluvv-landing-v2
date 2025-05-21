@@ -121,7 +121,7 @@ const v$ = useVuelidate(rules, form)
 const localePath = useLocalePath()
 const { t } = useI18n()
 const story = await useAsyncStoryblok('layouts/footer', {
-  version: 'draft',
+  version: 'published',
 })
 
 const termsError = t('form.error.terms')
