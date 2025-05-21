@@ -20,6 +20,17 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      htmlAttrs: {
+        lang: 'en',
+      },
+      title: 'Beauty shopping with real video reviews – discover with confidence - Bluvv',
+      meta: [
+        { name: 'description', content: 'Explore beauty products through short, authentic video reviews. See how they work for others and shop smarter – no more disappointing purchases.' },
+        { property: 'og:title', content: 'Beauty shopping with real video reviews – discover with confidence – Bluvv' },
+        { property: 'og:description', content: 'Explore beauty products through short, authentic video reviews. See how they work for others and shop smarter – no more disappointing purchases.' },
+        { property: 'og:image', content: '/bluvv-og-image.png' },
+        // { name: 'robots', content: 'index, follow' }
+      ],
       link: [
         {
           rel: 'preload',
