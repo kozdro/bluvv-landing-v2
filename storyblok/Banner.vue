@@ -8,7 +8,7 @@
       :style="{ background: blok.backgroundColor }"
     >
       <div class="flex gap-10">
-        <div class="md:basis-2/3 flex flex-col py-16 md:py-24">
+        <div class="lg:basis-2/3 flex flex-col py-16 lg:py-24">
           <div
             class="w-10 h-2 rounded-lg mb-5"
             :style="{ backgroundColor: extractTextColors(blok.heading)[0] }"
@@ -17,12 +17,12 @@
           <HTMLText
             v-if="blok.description"
             :content="blok.description"
-            class="my-16 md:mt-auto md:ml-40 md:mb-4"
+            class="my-16 xl:mt-auto xl:ml-40 xl:mb-4"
           />
         </div>
 
         <div
-          v-if="$viewport.isGreaterOrEquals('md')"
+          v-if="$viewport.isGreaterOrEquals('lg')"
           class="basis-1/3"
         >
           <StoryblokImage

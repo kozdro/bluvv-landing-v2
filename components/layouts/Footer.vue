@@ -1,16 +1,16 @@
 <template>
   <footer class="container mb-8">
-    <div class="bg-peach container pt-20 pb-4 md:pb-10 rounded-4xl">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+    <div class="bg-peach container pt-20 pb-4 lg:pb-10 rounded-4xl">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
         <div>
           <HTMLText :content="story?.content?.newsletterContent" />
           <form
             v-if="!submitted"
             novalidate
-            class="flex flex-col gap-4 md:gap-2 mt-20"
+            class="flex flex-col gap-4 lg:gap-2 mt-20"
             @submit.prevent="handleSubmit"
           >
-            <div class="flex items-center gap-2 md:gap-4">
+            <div class="flex items-center gap-2 lg:gap-4">
               <Input
                 v-model="form.email"
                 id="newsletter-email"
@@ -22,11 +22,11 @@
               />
               <button
                 type="submit"
-                class="shrink-0 flex items-center justify-center bg-white rounded-full size-10 md:size-16 transition-all duration-300 hover:scale-105 hover:bg-white/80 cursor-pointer"
+                class="shrink-0 flex items-center justify-center bg-white rounded-full size-10 lg:size-16 transition-all duration-300 hover:scale-105 hover:bg-white/80 cursor-pointer"
               >
                 <SvgoArrowRight
                   filled
-                  class="!mb-0 !size-6 md:!size-8 text-black"
+                  class="!mb-0 !size-6 lg:!size-8 text-black"
                 />
               </button>
             </div>
@@ -54,7 +54,7 @@
         </div>
   
         <div class="flex items-center justify-center">
-          <div class="relative bg-white size-20 md:size-40 rounded-full shadow-xl">
+          <div class="relative bg-white size-20 lg:size-40 rounded-full shadow-xl">
             <StoryblokImage
               :image="story?.content?.image"
               :webp-format="false"
@@ -63,12 +63,12 @@
           </div>
         </div>
   
-        <div class="flex flex-col md:items-end">
+        <div class="flex flex-col lg:items-end">
           <h6
             class="uppercase text-gray-500"
             v-text="story?.content?.contactTitle"
           />
-          <div class="flex flex-col gap-4 heading-medium md:text-right">
+          <div class="flex flex-col gap-4 heading-medium lg:text-right">
             <a
               :href="`mailto:${story?.content?.email}`"
               v-text="story?.content?.email"
@@ -81,7 +81,7 @@
         </div>
       </div>
   
-      <div class="mt-20 md:mt-44 border-t border-gray-500 pt-8 flex flex-col md:flex-row justify-between items-center md:items-start gap-6 text-sm">
+      <div class="mt-20 lg:mt-44 border-t border-gray-500 pt-8 flex flex-col lg:flex-row justify-between items-center lg:items-start gap-6 text-sm">
         <p v-text="story?.content?.legalText" />
         <div
           v-if="story?.content?.links?.length"

@@ -3,8 +3,8 @@
     v-editable="blok"
     class="stack-cards container py-16 md:py-32"
   >
-    <div class="stack-cards-wrapper flex flex-col lg:flex-row items-center justify-center min-h-svh lg:-mt-[50svh] gap-16">
-      <div class="w-full lg:basis-1/2 flex flex-col gap-8 relative">
+    <div class="stack-cards-wrapper flex flex-col md:flex-row items-center justify-center min-h-svh md:-mt-[50svh] gap-16">
+      <div class="w-full md:basis-1/2 flex flex-col gap-8 relative">
         <div>
           <div
             class="w-10 h-2 rounded-lg mb-5"
@@ -30,11 +30,11 @@
         </div>
       </div>
 
-      <ul class="w-full lg:basis-1/2 stack-cards-content grid">
+      <ul class="w-full md:basis-1/2 stack-cards-content grid">
         <li
           v-for="(card, index) in blok.cards"
           :key="card._uid"
-          class="stack-card min-h-[60svh] sm:min-h-[70svh] md:min-h-[80svh] lg:min-h-auto container py-10 rounded-4xl relative shadow-xl group"
+          class="stack-card min-h-[60svh] sm:min-h-[70svh] md:min-h-auto container py-10 rounded-4xl relative shadow-xl group"
           :style="{
             backgroundColor: card.backgroundColor,
           }"
@@ -45,7 +45,7 @@
           />
           <HTMLText
             :content="card.content"
-            class="lg:[&_p]:w-3/4 [&_p]:mx-auto [&_p]:text-lg text-center lg:text-left"
+            class="lg:[&_p]:w-3/4 [&_p]:mx-auto [&_p]:text-lg text-center md:text-left"
           />
           <StoryblokImage
             v-if="card.image"

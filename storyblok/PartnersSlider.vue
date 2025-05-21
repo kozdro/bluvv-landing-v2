@@ -15,7 +15,7 @@
         <HTMLText
           v-if="blok.description"
           :content="blok.description"
-          class="md:w-3/4 [&>*]:font-normal md:mx-auto"
+          class="lg:w-3/4 [&>*]:font-normal md:mx-auto"
         />
       </div>
     </div>

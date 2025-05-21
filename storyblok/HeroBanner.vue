@@ -5,8 +5,8 @@
     :class="blok.image?.filename ? 'min-h-screen' : 'min-h-[80vh]'"
     :style="{ backgroundColor: currentBackground }"
   >
-    <div class="container flex flex-col md:flex-row gap-20 mt-24 md:mt-30">
-      <div :class="blok.image?.filename ? 'md:basis-1/2' : 'md:basis-3/4'">
+    <div class="container flex flex-col lg:flex-row gap-20 mt-24 lg:mt-30 relative z-[2]">
+      <div :class="blok.image?.filename ? 'lg:basis-1/2' : 'lg:basis-3/4'">
         <div
           class="w-10 h-2 rounded-lg mb-5"
           :style="{ backgroundColor: extractTextColors(blok.content)[0] }"
@@ -15,13 +15,13 @@
 
         <div
           v-if="blok.cta?.length"
-          class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 mt-4 md:mt-10"
+          class="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-6 mt-4 lg:mt-10"
         >
           <Button
             v-for="(cta, index) in blok.cta"
             :key="cta._uid"
             :variant="index % 2 ? ButtonVariant.Primary : ButtonVariant.Secondary"
-            :width="$viewport.isLessThan('md') ? ButtonWidth.Full : ButtonWidth.Fit"
+            :width="$viewport.isLessThan('lg') ? ButtonWidth.Full : ButtonWidth.Fit"
             :href="cta.link.url"
             :target="cta.link.target"
             :label="cta.label"
@@ -31,7 +31,7 @@
     </div>
     <div
       v-if="blok.image?.filename"
-      class="relative md:absolute -bottom-16 md:bottom-0 right-0 h-full"
+      class="relative lg:absolute -bottom-16 md:-bottom-32 lg:bottom-0 right-0 h-full lg:h-3/4 xl:h-full z-[1]"
     >
       <StoryblokImage
         :image="blok.image"

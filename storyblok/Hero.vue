@@ -39,7 +39,7 @@
     <HTMLText
       v-if="blok.caption"
       :content="blok.caption"
-      class="absolute bottom-4 left-2 md:left-0"
+      class="absolute bottom-4 left-2 xl:left-0"
     />
   </section>
 </template>
@@ -73,10 +73,10 @@ const bottomText = computed<string>(() => {
 
 
 const layerClasses = computed<string[]>(() => [
-  'top-20 md:top-10 right-1/7 md:right-1/4 z-10 bg-primary size-32 md:size-44',
-  'top-1/7 md:top-2/5 -left-4 md:left-40 rotate-2deg z-10 bg-peach size-24 md:size-40',
+  'top-20 xl:top-10 right-1/7 md:right-1/4 z-10 bg-primary size-32 md:size-44',
+  'top-1/7 md:top-2/5 lg:top-1/5 xl:top-2/5 -left-4 md:left-1/10 lg:left-40 rotate-2deg z-10 bg-peach size-24 md:size-40',
   'bottom-0 left-2/3 md:left-1/3 rotate-[-2deg] z-10 bg-blue-blizzard size-40 md:size-60',
-  'bottom-1/8 md:bottom-1/4 right-24 z-10 bg-lavender-old size-36 md:size-50',
+  'bottom-1/8 md:bottom-1/7 lg:bottom-1/4 right-24 md:right-0 lg:right-24 z-10 bg-lavender-old size-36 md:size-50',
 ])
 
 onMounted(async() => {
