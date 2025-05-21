@@ -33,7 +33,7 @@
             <StoryblokImage
               :image="img"
               fit="contain"
-              class="object-contain object-center"
+              class="object-contain object-center max-h-30"
             />
           </div>
         </template>
