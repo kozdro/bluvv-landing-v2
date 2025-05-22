@@ -16,6 +16,7 @@ export default defineNuxtConfig({
       contactEmail: process.env.VITE_CONTACT_EMAIL,
       mailerLiteListId: process.env.VITE_MAILERLITE_LIST_ID,
       googleTagId: process.env.VITE_GOOGLE_TAG_ID,
+      cookiebotId: process.env.VITE_COOKIEBOT_ID,
     },
   },
   app: {
@@ -31,6 +32,20 @@ export default defineNuxtConfig({
         { property: 'og:image', content: '/bluvv-og-image.png' },
         // { name: 'robots', content: 'index, follow' }
       ],
+      script: [
+        {
+          src: `https://www.googletagmanager.com/gtag/js?id=${process.env.VITE_GOOGLE_TAG_ID}`,
+          async: true,
+          type: 'text/partytown'
+        },
+        {
+          id: 'Cookiebot',
+          src: 'https://consent.cookiebot.com/uc.js',
+          'data-cbid': process.env.VITE_COOKIEBOT_ID,
+          type: 'text/javascript',
+          async: true,
+        },
+      ],
       link: [
         {
           rel: 'preload',
@@ -39,20 +54,22 @@ export default defineNuxtConfig({
           type: 'font/woff2',
           crossorigin: true
         },
+        {
+          rel: 'preconnect',
+          href: 'https://www.google.com'
+        },
+        {
+          rel: 'preconnect',
+          href: 'https://www.gstatic.com',
+          crossorigin: '',
+        },
       ],
     },
   },
   css: ['~/assets/css/main.css'],
-  modules: [
-    '@storyblok/nuxt',
-    '@nuxt/image',
-    '@nuxt/fonts',
-    'nuxt-svgo',
-    'nuxt-viewport',
-    '@nuxtjs/i18n',
-  ],
+  modules: ['@storyblok/nuxt', '@nuxt/image', '@nuxt/fonts', 'nuxt-svgo', 'nuxt-viewport', '@nuxtjs/i18n', '@nuxtjs/partytown'],
   storyblok: {
-    accessToken: import.meta.env.VITE_STORYBLOK_TOKEN,
+    accessToken: process.env.VITE_STORYBLOK_TOKEN,
   },
   fonts: {
     defaults: {
@@ -75,6 +92,10 @@ export default defineNuxtConfig({
       'storyblok.com',
       'a.storyblok.com',
     ],
+  },
+  partytown: {
+    forward: ['dataLayer.push'],
+    debug: true
   },
   viewport: {
     breakpoints: {

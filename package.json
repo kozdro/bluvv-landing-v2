@@ -13,6 +13,7 @@
     "@nuxt/fonts": "0.11.3",
     "@nuxt/image": "1.10.0",
     "@nuxtjs/i18n": "9.5.4",
+    "@nuxtjs/partytown": "1.6.0",
     "@storyblok/nuxt": "6.2.4",
     "@tailwindcss/vite": "^4.1.6",
     "@vuelidate/core": "^2.0.3",
