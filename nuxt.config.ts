@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     preset: 'node-server',
   },
   compatibilityDate: '2024-11-01',
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   runtimeConfig: {
     emailPass: process.env.VITE_EMAIL_PASS,
     mailerLiteApiKey: process.env.VITE_MAILERLITE_API_KEY,
@@ -30,7 +30,7 @@ export default defineNuxtConfig({
         { property: 'og:title', content: 'Beauty shopping with real video reviews – discover with confidence – Bluvv' },
         { property: 'og:description', content: 'Explore beauty products through short, authentic video reviews. See how they work for others and shop smarter – no more disappointing purchases.' },
         { property: 'og:image', content: '/bluvv-og-image.png' },
-        // { name: 'robots', content: 'index, follow' }
+        { name: 'robots', content: 'index, follow' },
       ],
       script: [
         {
@@ -143,5 +143,12 @@ export default defineNuxtConfig({
     plugins: [
       tailwindcss(),
     ],
+  },
+  site: {
+    url: 'https://bluvv.shop',
+    name: 'Bluvv website',
+  },
+  robots: {
+    allow: '/',
   },
 })
